@@ -7,10 +7,7 @@ function App() {
   return (
     <div>
       <header className="h-16 border-2 text-center text-2xl bg-purple-400">Appointment Calender</header>
-      <button className="text-2xl mx-auto block border-5 mt-8 bg-purple-400 rounded-lg px-4 py-1">Book Appointment</button>
-
-    
-      <Calendar onChange={setDate} value={date} className="mx-auto mt-8 border-2 rounded-lg" style={{ width: '600px', height: '800px' }} />
+      <button className="text-2xl mx-auto block">Book Appointment</button>
     </div>
    
   )
