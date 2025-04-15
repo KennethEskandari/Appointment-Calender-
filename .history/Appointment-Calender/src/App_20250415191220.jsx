@@ -1,5 +1,8 @@
+import 'react-calendar/dist/Calendar.css'
+import Calendar from 'react-calendar/dist/cjs/Calendar.js'
 import { useState } from 'react'
-import Calendar from 'react-calendar'
+import '/Users/kennetheskandari/Appointment-Calender-/Appointment-Calender/src/index.css'
+
 
 function App() {
   const [date, setDate] = useState(new Date())
@@ -7,7 +10,7 @@ function App() {
   return (
     <div>
       <header className ="bg-purple-400 p-4 shadow-md">
-        <h1>Appointment Calender</h1>
+        <h1 className="text-red-500">Appointment Calender</h1>
         </header> 
         <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
           Make an Appointment!
