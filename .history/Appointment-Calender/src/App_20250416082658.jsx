@@ -3,8 +3,6 @@ import {createViewDay, createViewMonthGrid, createViewMonthAgenda, createViewWee
 import {createEventsServicePlugin} from "@schedule-x/events-service";
 import { useEffect, useState } from "react";
 
-import '@schedule-x/theme-default/dist/index.css'
-
 export default function CalendarApp() { 
   const eventService = useState => createEventsServicePlugin()[0];
   
@@ -12,15 +10,15 @@ export default function CalendarApp() {
     events: [
       {
         id: 1,
-        start: '2024-01-01',
-        end: '2024-01-02',
+        start: new Date(2023, 9, 1),
+        end: new Date(2023, 9, 2),
         title: "Event 1",
       },
       {
-        id: 1,
-        start: '2024-01-01',
-        end: '2024-01-02',
-        title: "Event 1",
+        id: 2,
+        start: new Date(2023, 9, 2),
+        end: new Date(2023, 9, 3),
+        title: "Event 2",
       },
     ],
     plugins: [
