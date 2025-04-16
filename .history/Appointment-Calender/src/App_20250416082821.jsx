@@ -3,8 +3,6 @@ import {createViewDay, createViewMonthGrid, createViewMonthAgenda, createViewWee
 import {createEventsServicePlugin} from "@schedule-x/events-service";
 import { useEffect, useState } from "react";
 
-import '@schedule-x/theme-default/dist/index.css'
-
 export default function CalendarApp() { 
   const eventService = useState => createEventsServicePlugin()[0];
   
