@@ -18,24 +18,29 @@ function CalendarApp() {
     initialScroll: '07:50:00' // Corrected time format
   })
 
-
+  const config = { 
+    dayBoundaries: {
+      start: '06:00',
+      end: '18:00',
+    },
+  }
   const calendarApp = useCalendarApp({
 
     views: [
-      createViewDay(),
-      createViewWeek(),
-      createViewMonthGrid(), 
-      createViewMonthAgenda()
-    ],
+        createViewDay({startHour: 7, endHour: 20, config.dayBoundaries}),
+       createViewWeek({startHour: 7, endHour: 20, config.dayBoundaries}),
+       createViewMonthGrid(), 
+       createViewMonthAgenda()
+      ],
 
     events: [
       {
-        id: '1',
-        title: 'Event 1',
-        start: '2023-10-01',
-        end: '2023-10-02',
-      }
-    ],
+      id: '1',
+      title: 'Event 1',
+      start: '2023-10-01',
+      end: '2023-10-02',
+    }
+  ],
 
     plugins: [eventsService, scrollController]
   })

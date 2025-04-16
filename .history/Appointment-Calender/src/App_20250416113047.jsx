@@ -4,6 +4,7 @@ import {
   createViewWeek,
   createViewMonthGrid,
   createViewMonthAgenda,
+  createCalendar,
 }
 from "@schedule-x/calendar";
 import { useEffect, useState } from "react";
@@ -18,12 +19,18 @@ function CalendarApp() {
     initialScroll: '07:50:00' // Corrected time format
   })
 
+  const config = { 
+    dayBoundaries: {
+      start: '06:00',
+      end: '18:00',
+    },
+  }
 
   const calendarApp = useCalendarApp({
 
     views: [
-      createViewDay(),
-      createViewWeek(),
+      createViewDay({ startHour: 7, endHour: 20, ...config.dayBoundaries }),
+      createViewWeek({ startHour: 7, endHour: 20, ...config.dayBoundaries }),
       createViewMonthGrid(), 
       createViewMonthAgenda()
     ],
@@ -41,6 +48,8 @@ function CalendarApp() {
   })
 
   useEffect(() => {
+    const calendar = createCalendar(config)
+    calendar.render(document.getElementById("calendar"))
     eventsService.getAll()
   }, [eventsService])
 
