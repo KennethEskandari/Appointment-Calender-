@@ -15,42 +15,36 @@ function CalendarApp() {
   const eventsService = useState(() => createEventsServicePlugin())[0]
 
   const scrollController = createScrollControllerPlugin({
-    initialScroll: '07:50:00' // Corrected time format
+    initialScroll: '7:50'
   })
-
 
   const calendarApp = useCalendarApp({
 
-    views: [
-      createViewDay(),
-      createViewWeek(),
-      createViewMonthGrid(), 
-      createViewMonthAgenda()
-    ],
+    views: [createViewDay(), createViewWeek(), createViewMonthGrid(), createViewMonthAgenda()],
 
-    events: [
-      {
-        id: '1',
-        title: 'Event 1',
-        start: '2023-10-01',
-        end: '2023-10-02',
-      }
-    ],
+    events: [{
+      id: '1',
+      title: 'Event 1',
+      start: '2023-10-01',
+      end: '2023-10-02',
+    }],
 
-    plugins: [eventsService, scrollController]
+    plugins: [eventsService] [scrollController]
   })
+
+calendarApp.render(document.getElementById('calendar'))
+ 
+scrollController.scrollTo('04:00')
 
   useEffect(() => {
     eventsService.getAll()
-  }, [eventsService])
+  }, [])
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="min-h-[80vh] w-[80vw] bg-white shadow-lg rounded-lg p-6">
-        <ScheduleXCalendar calendarApp={calendarApp} />
-      </div>
+    <div>
+      <ScheduleXCalendar calendarApp={calendarApp} />
     </div>
-  );
+  )
 }
 
 export default CalendarApp;

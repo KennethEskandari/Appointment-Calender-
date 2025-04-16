@@ -18,12 +18,18 @@ function CalendarApp() {
     initialScroll: '07:50:00' // Corrected time format
   })
 
+  const config = { 
+    dayBoundaries: {
+      start: '06:00',
+      end: '18:00',
+    },
+  }
 
   const calendarApp = useCalendarApp({
 
     views: [
-      createViewDay(),
-      createViewWeek(),
+      createViewDay({ startHour: 7, endHour: 20, ...config.dayBoundaries }),
+      createViewWeek({ startHour: 7, endHour: 20, ...config.dayBoundaries }),
       createViewMonthGrid(), 
       createViewMonthAgenda()
     ],
