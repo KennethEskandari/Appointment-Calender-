@@ -40,26 +40,28 @@ function CalendarApp() {
   useEffect(() => {
     eventsService.getAll()
   }, [eventsService])
-  
-return (
-  <div>
-    {/* Sidebar */}
-    <div className="flex h-screen">
-      <div className="w-1/4 bg-purple-200 p-4">
-        <Sidebar />
-      </div>
-    
-      {/* Calendar App */}
-      <div className="w-3/4 bg-purple-200 p-4">
 
+  return (
+    <div>
+      <div className = 'flex h-screen'>
+        <Sidebar />
+        </div>
+      <div className="w-1/4 bg-purple-200 p-4">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          onClick={handleMakeAppointment}
+        >
+          Make Appointment
+        </button>
+        </div>
           <header className="bg-purple-400 items-center justify-center">
             <h1 className="text-2xl text-black">Schedule An Appointment</h1>
           </header>
           <ScheduleXCalendar calendarApp={calendarApp} />
         </div>
-      </div>
-    </div>
 
-);
+
+  );
 }
+
 export default CalendarApp;

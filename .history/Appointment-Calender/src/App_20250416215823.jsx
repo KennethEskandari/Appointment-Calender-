@@ -9,7 +9,6 @@ from "@schedule-x/calendar";
 import { useEffect, useState } from "react";
 import { createEventsServicePlugin } from "@schedule-x/events-service";
 import '@schedule-x/theme-default/dist/index.css';
-import Sidebar from "./Components/Sidebar";
 
 function CalendarApp() {
   const eventsService = useState(() => createEventsServicePlugin())[0]
@@ -40,26 +39,28 @@ function CalendarApp() {
   useEffect(() => {
     eventsService.getAll()
   }, [eventsService])
-  
-return (
-  <div>
-    {/* Sidebar */}
-    <div className="flex h-screen">
-      <div className="w-1/4 bg-purple-200 p-4">
-        <Sidebar />
-      </div>
-    
-      {/* Calendar App */}
-      <div className="w-3/4 bg-purple-200 p-4">
 
-          <header className="bg-purple-400 items-center justify-center">
+  return (
+    <div>
+      <div className="flex justify-center items-center mt-4">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          onClick={handleMakeAppointment}
+        >
+          Make Appointment
+        </button>
+      </div>
+
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="min-h-[80vh] w-[80vw] bg-white shadow-lg rounded-lg p-6">
+          <header className="bg-purple-400 h-16 flex items-center justify-center">
             <h1 className="text-2xl text-black">Schedule An Appointment</h1>
           </header>
           <ScheduleXCalendar calendarApp={calendarApp} />
         </div>
       </div>
     </div>
-
-);
+  );
 }
+
 export default CalendarApp;
