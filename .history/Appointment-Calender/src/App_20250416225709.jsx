@@ -39,21 +39,20 @@ function CalendarApp() {
 
   useEffect(() => {
     eventsService.getAll()
-    eventsService.getAll()
   }, [eventsService])
   
 return (
   <div>
     {/* Sidebar */}
     <div className="flex h-screen">
-      <div className="w-1/4 p-4">
+      <div className="w-1/4 bg-purple-200 p-4">
         <Sidebar />
       </div>
     
       {/* Calendar App */}
-      <div className="w-3/4  p-4">
+      <div className="w-3/4 bg-purple-200 p-4">
 
-          <header className="bg-red-400 items-center justify-center">
+          <header className="bg-purple-400 items-center justify-center">
             <h1 className="text-2xl text-black">City Sound Installation Calendar</h1>
           </header>
           <ScheduleXCalendar calendarApp={calendarApp} />

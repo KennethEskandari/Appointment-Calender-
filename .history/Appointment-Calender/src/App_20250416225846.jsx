@@ -39,7 +39,6 @@ function CalendarApp() {
 
   useEffect(() => {
     eventsService.getAll()
-    eventsService.getAll()
   }, [eventsService])
   
 return (

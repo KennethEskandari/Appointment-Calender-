@@ -39,7 +39,6 @@ function CalendarApp() {
 
   useEffect(() => {
     eventsService.getAll()
-    eventsService.getAll()
   }, [eventsService])
   
 return (
@@ -51,7 +50,7 @@ return (
       </div>
     
       {/* Calendar App */}
-      <div className="w-3/4  p-4">
+      <div className="w-3/4 bg-purple-200 p-4">
 
           <header className="bg-red-400 items-center justify-center">
             <h1 className="text-2xl text-black">City Sound Installation Calendar</h1>
