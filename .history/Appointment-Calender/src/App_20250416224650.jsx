@@ -51,7 +51,7 @@ return (
     
       {/* Calendar App */}
       <div className="w-3/4 bg-purple-200 p-4">
-
+        <div className="min-h-[80vh] w-[90%] bg-purple-200 p-4">
           <header className="bg-purple-400 items-center justify-center">
             <h1 className="text-2xl text-black">Schedule An Appointment</h1>
           </header>
@@ -59,7 +59,7 @@ return (
         </div>
       </div>
     </div>
-
+  </div>
 );
 }
 export default CalendarApp;
