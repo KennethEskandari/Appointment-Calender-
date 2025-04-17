@@ -8,7 +8,7 @@ const Sidebar = () => {
             <ul>
                 <li className = ' text-2xl font-bold p-4'>Sidebar</li>
                 <li className = ' text-lg p-4'>
-                    <Link to="/appointment">Make Appointment</Link>
+                    <Link to="/Appointment">Make Appointment</Link>
                 </li>
                 <li className = ' text-lg p-4'>Get Notifications</li>
             </ul>
